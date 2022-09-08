@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+<form action={% url 'articles:create' %} method="POST">
+  {% csrf_token %}
+  {% comment %} {{form.as_p}} {% endcomment %}
+  {% bootstrap_form form %}
+  {% buttons %}
+    <input type="submit" value="출간하기">
+  {% endbuttons %}
+</form>
+<div>
+  <button>
+    <a href="{% url 'articles:index' %}">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>나가기</span>
+    </a>
+  </button>
+  <div>
+    <button>
+      임시저장
+    </button>
+    <button>
+      출간하기
+    </button>
+  </div>
+</div>
+{% endblock content %}
