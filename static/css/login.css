@@ -1,0 +1,142 @@
+.login-box {
+    width: 606px;
+    height: 530px;
+    padding: 24px;
+}
+
+/* left-side */
+.left {
+    background-color: #F8F9FA;
+    padding: 24px;
+    width: 216px;
+}
+
+.welcome-img {
+    width: 100%;
+}
+
+/* right-side */
+.right {
+    padding: 24px;
+    width: 390px;
+    background-color: white !important;
+}
+
+.close {
+    height:24px;
+    margin-bottom: 36px;
+}
+
+.close a {
+    width: 24px;
+    height: 24px;
+}
+.close .icon {
+    width: 24px;
+    height: 24px;
+    color: black;
+}
+
+.title {
+    font-size: 1.32rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+section h4 {
+    margin: 16px 0px;
+    color: var(--main-grey);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+section .second {
+    margin-top: 20px;
+}
+
+section form {
+    /* height: 48px; */
+    width: 100%;
+    margin: 0px;
+    -webkit-appearance: none;
+    -webkit-rtl-ordering: none;
+}
+
+form div {
+    margin-bottom: 8px;
+}
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    border: none;
+}
+
+#email {
+    width: 100% !important;
+}
+#email, #password {
+    appearance: none;
+    width: 70%;
+    height: 48px;
+    padding: 16px;
+    margin-bottom: 8px;
+    color: var(--main-grey);
+    border: solid 0.5px var(--main-grey);
+    /* border-radius: 2px; */
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+}
+
+input:focus {
+    outline: solid 0.5px var(--main-color);
+    border: none;
+    outline-offset: -0.5px;
+    /* border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px; */
+}
+
+#login {
+    width: 30%;
+    height: 100%;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+
+section div {
+    height: 48px;
+}
+
+.social {
+    margin-top: 24px;
+}
+
+/* foot */
+.foot {
+    height: 24px;
+}
+
+h2 {
+    font-size: 1.3125rem;
+}
+
+.foot a {
+    text-decoration: none;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.foot span {
+    margin-right: 4px;
+}
+
+.foot a :hover {
+    text-decoration: underline;
+    color: var(--main-color);
+}

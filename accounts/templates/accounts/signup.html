@@ -1,9 +1,74 @@
-{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% load bootstrap5 %}
 
-{% block content %}
+<div class="login-box d-flex mx-auto my-auto">
+  <!-- left-side:환영합니다 -->
+  <div class="left d-flex flex-column justify-content-center">
+    <img class="welcome-img" src="{% static 'img/login_img.png' %}" alt="환영합니다">
+  </div>
+
+  <!-- right-side:로그인 -->
+  <div class="right d-flex flex-column justify-content-center">
+    
+    <!-- 상:close -->
+    <div class="close d-flex justify-content-end">
+      <a href="#">
+        <i class="icon fa-light fa-xmark"></i>
+      </a>
+    </div>
+
+    <!-- 하:login -->
+    <div class="d-flex flex-column justify-content-between" style="height: 422px;">
+
+      <!-- 상:로그인 -->
+      <div class="d-flex flex-column">
+        <h2 class="title">회원가입</h2>
+        <section>
+          <h4>이메일로 회원가입</h4>
+          <form action="#" method="POST" class="d-flex flex-column">
+            <div>
+              <input type="text" name="email" id="email" placeholder="이메일을 입력하세요.">
+            </div>
+            <div class="d-flex">
+              <input type="text" name="password" id="password" placeholder="비밀번호를 입력하세요.">
+              <input type="submit" id="login" value="로그인">
+            </div>
+          </form>
+        </section>
+        <section>
+          <h4 class="second">소셜 계정으로 회원가입</h4>
+          <!-- 소셜 로그인 로고 -->
+          <div class="social d-flex justify-content-around">
+            <a href="https://github.com/login/oauth/authorize?client_id=ccba4347b4282ff43507&redirect_uri=http://127.0.0.1:8000/callback/">
+              <img style="width:48px; height:48px;" src="{% static 'img/logo_github.png' %}" alt="github-소셜로그인">
+            </a>
+            <a href="#">
+              <img style="width:48px; height:48px;" src="{% static 'img/logo_github.png' %}" alt="google-소셜로그인">
+            </a>
+            <a href="#">
+              <img style="width:48px; height:48px;" src="{% static 'img/logo_github.png' %}" alt="facebook-소셜로그인">
+            </a>
+          </div>
+        </section>
+      </div>
+      <!-- 회원가입 -->
+      <div class="foot d-flex justify-content-end">
+        <span>계정이 이미 있으신가요?</span>
+        <a class="signup" href={% url 'accounts:login' %}>로그인</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% comment %} {% block content %}
 <form action="{% url 'accounts:signup' %}" method="POST">
   {% csrf_token %}
   {{form.as_p}}
   <input type="submit" value="Sign Up">
 </form>
-{% endblock content %}
+{% endblock content %} {% endcomment %}

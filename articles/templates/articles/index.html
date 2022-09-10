@@ -2,21 +2,33 @@
 {% load bootstrap5 %}
 
 {% block content %}
-<!-- menu bar -->
-<div>
-  <div>
-    <!-- trending -->
-    <a href="#">트렌딩</a>
-    <a href="#">최신</a>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<article class="main">
+  <!-- menu bar -->
+  <div class="menu d-flex justify-content-between">
+    <!-- filter -->
+    <div class="sort-bar d-flex">
+      <a href="#">
+        <i class="fa-solid fa-arrow-trend-up"></i>
+        트렌딩
+      </a>
+      <a href="#">
+        <i class="fa-solid fa-clock"></i>
+        최신
+      </a>
+    </div>
+    <!-- more -->
+    <div>
+      <i class="fa-solid fa-ellipsis-vertical"></i>
+    </div>
   </div>
-  <!-- more -->
+  
+  <!-- articles -->
   <div>
-
+  
   </div>
-</div>
-
-<!-- articles -->
-<div>
-
-</div>
+</article>
 {% endblock content %}

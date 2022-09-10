@@ -1,17 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+
 <nav class="navbar bg-light">
   <div class="container-fluid">
     <a href="{% url 'articles:index' %}" class="navbar-brand mb-0 h1">velog</a>
-    <div class="d-flex">
-      <i class="fa-solid fa-sun"></i>
-      <a href="{% url 'articles:search' %}">
+    <div class="right d-flex align-items-center">
+      <a class="icon first" href="">
+        <i class="fa-solid fa-sun"></i>
+      </a>
+      <a class="icon second" href="{% url 'articles:search' %}">
         <i class="fa-solid fa-magnifying-glass"></i>
       </a>
       {% if request.user.is_authenticated %}
-      {% comment %} 로그인을 했을때 보여지는 것들 {% endcomment %}
-      <a href="{% url 'articles:create' %}" class="btn" style="width:100px;">새 글 작성</a>
+        {% comment %} 로그인을 했을때 보여지는 것들 {% endcomment %}
+        <button class="button">
+          <a href="{% url 'accounts:login' %}" class="" style="">새 글 작성</a>
+        </button>
       {% else %}
-      {% comment %} 로그인을 않했을때 보여지는 것들 {% endcomment %}
-      <a href="{% url 'accounts:login' %}" class="btn btn-dark" style="width:100px;">로그인</a>
+        {% comment %} 로그인을 않했을때 보여지는 것들 {% endcomment %}
+        <button class="button">
+          <a href="{% url 'accounts:login' %}" class="" style="">로그인</a>
+        </button>
       {% endif %}
     </div>
   </div>
