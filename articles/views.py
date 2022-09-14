@@ -8,7 +8,11 @@ from .forms import ArticleForm
 
 @require_safe
 def index(request):
-    return render(request, 'articles/index.html')
+    articles = Article.objects.all()
+    context = {
+        'articles': articles,
+    }
+    return render(request, 'articles/index.html', context)
 
 # @require_http_methods(['GET', 'POST'])
 def create(request):

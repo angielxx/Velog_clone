@@ -2,6 +2,7 @@
 {% load bootstrap5 %}
 
 {% block content %}
+
 <form action={% url 'articles:create' %} method="POST">
   {% csrf_token %}
   {% comment %} {{form.as_p}} {% endcomment %}

@@ -4,6 +4,8 @@
 
 .main {
     padding: 0px 16px;
+    width: 80%;
+    margin: 0px auto;
 }
 
 /* menu bar */
@@ -13,3 +15,18 @@
     text-decoration: none;
     
 } 
+
+/* start: article grid */
+#card {
+    width: 300px;
+    height: 400px;
+    background-color: white !important;
+    margin: 16px;
+}
+
+h4 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* end: article grid */

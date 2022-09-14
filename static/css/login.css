@@ -65,6 +65,10 @@ section form {
 form div {
     margin-bottom: 8px;
 }
+
+form label {
+    display: hidden;
+}
 input {
     -webkit-appearance: none;
     -moz-appearance: none;

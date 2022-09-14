@@ -27,8 +27,29 @@
   </div>
   
   <!-- articles -->
-  <div>
-  
+  <div class="container">
+    <div class="row">
+      {% for article in articles %}
+        <div id="card" class="col-4">
+          <div class="thumbnail">
+            {% comment %} 있으면 보이기 {% endcomment %}
+          </div>
+          <div class="content">
+            <h4>{{ article.title }}</h4>
+            <p>{{ article.content }}</p>
+            <span>{{ article.updated_at}}</span>
+            <span>0개의 댓글</span>
+          </div>
+          <div class="user d-flex justify-content-between">
+            <a href="#">by {{article.user}}</a>
+            <div class="likes d-flex">
+              <i class="fa-solid fa-heart"></i>
+              <span>likes</span>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 </article>
 {% endblock content %}

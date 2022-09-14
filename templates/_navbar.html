@@ -13,13 +13,13 @@
       </a>
       {% if request.user.is_authenticated %}
         {% comment %} 로그인을 했을때 보여지는 것들 {% endcomment %}
-        <button class="button">
-          <a href="{% url 'accounts:login' %}" class="" style="">새 글 작성</a>
+        <button class="button" id="create">
+          <a href="{% url 'articles:create' %}" class="">새 글 작성</a>
         </button>
       {% else %}
-        {% comment %} 로그인을 않했을때 보여지는 것들 {% endcomment %}
-        <button class="button">
-          <a href="{% url 'accounts:login' %}" class="" style="">로그인</a>
+        {% comment %} 로그인을 안 했을 때 보여지는 것들 {% endcomment %}
+        <button class="button" id="login">
+          <a href="{% url 'accounts:login' %}" class="">로그인</a>
         </button>
       {% endif %}
     </div>
