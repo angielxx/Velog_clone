@@ -29,8 +29,6 @@ def create(request):
     }
     return render(request, 'articles/create.html', context)
 
-
-
 def search(request):
     param = request.GET.get('param')
     print(param)

@@ -10,27 +10,35 @@
   <!-- menu bar -->
   <div class="menu d-flex justify-content-between">
     <!-- filter -->
-    <div class="sort-bar d-flex">
-      <a href="#">
-        <i class="fa-solid fa-arrow-trend-up"></i>
-        트렌딩
-      </a>
-      <a href="#">
-        <i class="fa-solid fa-clock"></i>
-        최신
-      </a>
+    <div class="sort-bar d-flex align-items-center">
+      <div class="d-flex justify-content-center">
+        <a href="#" class="active">
+          <i class="fa-solid fa-arrow-trend-up"></i>
+          트렌딩
+        </a>
+      </div>
+      <div class="d-flex justify-content-center">
+        <a href="#" class="">
+          <i class="fa-solid fa-clock"></i>
+          최신
+        </a>
+      </div>
+      <div class="filter d-flex align-items-center justify-content-between">
+        이번 주
+        <i class="fa-solid fa-sort-down"></i>
+      </div>
     </div>
     <!-- more -->
-    <div>
+    <div class="more">
       <i class="fa-solid fa-ellipsis-vertical"></i>
     </div>
   </div>
   
   <!-- articles -->
-  <div class="container">
+  <div class="content container">
     <div class="row">
       {% for article in articles %}
-        <div id="card" class="col-4">
+        <div id="card" class="col-3">
           <div class="thumbnail">
             {% comment %} 있으면 보이기 {% endcomment %}
           </div>

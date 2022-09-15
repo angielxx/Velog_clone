@@ -8,15 +8,61 @@
     margin: 0px auto;
 }
 
-/* menu bar */
+/* start : menu bar */
 .menu {
     margin-top: 24px;
     height: 48px;
+}
+
+
+.menu .more {
+    color: var(--main-grey)
+}
+
+.sort-bar .active{
+    font-weight: bold;
+    color: var(--main-black) !important;
+}
+.sort-bar a {
     text-decoration: none;
-    
-} 
+    color: var(--main-grey);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.sort-bar div {
+    width: 112px;
+}
+
+.sort-bar .filter {
+    width: 84px;
+    height: 32px;
+    background-color: white;
+    padding: 0px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+    margin-left: 15px;
+}
+
+.sort-bar .filter i {
+    font-size: 16px;
+    position: relative;
+    top: -4px;
+    margin-right: 6px;
+}
+
+
+/* end : menu bar */
 
 /* start: article grid */
+.content {
+    margin: 32px 0px 0px 0px;
+}
+
+.content .row {
+    width: 100%;
+}
+
 #card {
     width: 300px;
     height: 400px;
