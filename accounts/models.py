@@ -15,11 +15,12 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_superuser(self, email, date_of_birth, password):
+    def create_superuser(self, email, date_of_birth, password, username):
         user = self.create_user(
             email,
             password=password,
             date_of_birth=date_of_birth,
+
         )
         user.is_admin = True
         user.save(using=self._db)
@@ -35,14 +36,19 @@ class User(AbstractBaseUser):
     date_of_birth = models.DateField()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    name = models.CharField(
+        verbose_name='name',
+        max_length=25,
+        unique=True,
+        )
 
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['date_of_birth']
+    REQUIRED_FIELDS = ['date_of_birth', 'name']
 
     def __str__(self):
-        return self.email
+        return self.name
 
     def has_perm(self, perm, obj=None):
         return True

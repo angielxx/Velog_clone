@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<article class="main">
+  <div class="title">
+    <h1>{{ article.title }}</h1>
+    <div class="meta d-flex justify-content-between">
+      <div class="user d-flex">
+        <span><b>{{article.user}}</b></span>
+        <span>{{article.updated_at|date:'Y년 m월 d일'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <p>{{article.content}}</p>
+  </div>
+  <div class="user-profile d-flex">
+    <img src="{% static 'img/profile-example.jpeg' %}" alt="">
+    <div class="d-flex flex-column justify-content-center">
+      <a href="#">{{article.user}}</a>
+      <p>Hi, I'm Angie.</p>
+    </div>
+  </div>
+  <div class="comment-area">
+    <h4>#개의 댓글</h4>
+    <form action="{% url 'articles:comment_create' article.pk %}" method="POST">
+      {% csrf_token %}
+      {{form.as_p}}
+      <div class="d-flex justify-content-end">
+        <input class="submit" type="submit" value="댓글 작성">
+      </div>
+    </form>
+    <div class="comment-list">
+      {% for comment in comments %}
+        <div class="comment">
+          <div class="user d-flex">
+            <img src="{% static 'img/profile-example.jpeg' %}" alt="">
+            <div class="d-flex flex-column">
+              <span><b>{{comment.user}}</b></span>
+              <span>{{ comment.updated_at|date:'Y년 m월 d일' }}</span>
+            </div>
+          </div>
+          <p>{{comment.content}}</p>
+          <div class="sub-comment d-flex">
+            <i class="fa-regular fa-square-plus"></i>
+            <span>답글 달기</span>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</article>
+{% endblock content %}

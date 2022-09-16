@@ -10,18 +10,19 @@ class UserAdmin(BaseUserAdmin):
     form = UserChangeForm
     add_form = UserCreationForm
 
-    list_display = ('email', 'date_of_birth', 'is_admin')
+    list_display = ('email', 'date_of_birth', 'is_admin', 'name')
     list_filter = ('is_admin',)
+    # admin 페이지에서 유저 추가할때 나타나는 입력폼
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
-        ('Personal info', {'fields': ('date_of_birth',)}),
+        ('Personal info', {'fields': ('date_of_birth', 'name',)}),
         ('Permissions', {'fields': ('is_admin',)}),
     )
 
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('email', 'date_of_birth', 'password1', 'password2')}
+            'fields': ('email', 'date_of_birth', 'password1', 'password2', 'name')}
          ),
     )
     search_fields = ('email',)

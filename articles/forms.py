@@ -33,6 +33,14 @@ class ArticleForm(forms.ModelForm):
 
 class CommentForm(forms.ModelForm):
 
+    content = forms.CharField(
+        widget=forms.Textarea(
+            attrs={
+                'placeholder': '댓글을 작성하세요.',
+            }
+        )
+    )
+
     class Meta:
         model = Comment
         # fields = '__all__'

@@ -1,0 +1,133 @@
+.main {
+  width: 60%;
+  margin: 0px auto;
+  padding-bottom: 68px;
+}
+
+/* start : title */
+.title {
+  margin-top: 88px;
+  height: 153px;
+}
+
+.title h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 32px;
+}
+
+.title .user span:nth-of-type(1){
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+/* end : title */
+
+/* start : content */
+.content {
+  margin-top: 88px;
+  line-height: 30px;
+}
+
+/* end : content */
+
+/* start : user-profile */
+.user-profile {
+  height: 128px;
+  margin-top: 256px;
+}
+
+.user-profile img {
+  width: 128px;
+  height: 128px;
+  border-radius: 64px;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.user-profile a {
+  height: 36px;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--main-black);
+}
+
+.user-profile p {
+  line-height: 24px;
+  font-size: 18px;
+}
+
+/* end : user-profile */
+
+/* start : comment-area */
+.comment-area {
+  margin-top: 48px;
+}
+
+.comment-area h4 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.comment-area label {
+  display: none;
+}
+
+.comment-area textarea {
+  width: 100%;
+  height: 98px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.comment-area .submit {
+  width: 110px;
+  height: 32px;
+}
+
+  /* start : comment-area // comment-list */
+.comment-list .comment .user img {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-right: 8px;
+}
+
+.comment .user {
+  margin-bottom: 24px;
+}
+
+.comment .user span:nth-of-type(1) {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.comment .user span:nth-of-type(2) {
+  font-size: 12px;
+  color: var(--main-grey);
+  margin-top: 8px;
+}
+
+.comment p {
+  line-height: 27px;
+  margin-bottom: 32px;
+}
+
+.sub-comment {
+  color: var(--main-color);
+}
+
+.sub-comment i {
+  margin-right: 8px;
+}
+
+.sub-comment span {
+  font-weight: bold;
+}
+
+  /* end : comment-area // comment-list */
+
+/* end : comment-area */

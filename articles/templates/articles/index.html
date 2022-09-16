@@ -12,7 +12,7 @@
     <!-- filter -->
     <div class="sort-bar d-flex align-items-center">
       <div class="d-flex justify-content-center">
-        <a href="#" class="active">
+        <a href="{% url 'articles:index' %}" class=" active">
           <i class="fa-solid fa-arrow-trend-up"></i>
           트렌딩
         </a>
@@ -35,29 +35,35 @@
   </div>
   
   <!-- articles -->
-  <div class="content container">
-    <div class="row">
-      {% for article in articles %}
-        <div id="card" class="col-3">
+  <div class="article-box d-flex flex-wrap">
+    {% for article in articles %}
+      <div class="box">
+        <div class="content d-flex flex-column justify-content-between">
           <div class="thumbnail">
-            {% comment %} 있으면 보이기 {% endcomment %}
+            <img src="{% static '{{ article.thumbnail}}' %}" alt="">
           </div>
-          <div class="content">
-            <h4>{{ article.title }}</h4>
-            <p>{{ article.content }}</p>
-            <span>{{ article.updated_at}}</span>
-            <span>0개의 댓글</span>
+          <div class="post">
+            <a href="{% url 'articles:detail' article.pk %}">
+              <h4>{{ article.title }}</h4>
+              <p>{{ article.content }}</p>
+            </a>
+            <div class="d-flex ">
+              <span>{{ article.updated_at|date:'Y년 m월 d일'}}</span>
+              <span>{{ comments }}개의 댓글</span>
+            </div>
           </div>
-          <div class="user d-flex justify-content-between">
-            <a href="#">by {{article.user}}</a>
-            <div class="likes d-flex">
+          <div class="info d-flex justify-content-between">
+            <a href="#" class="d-flex align-items-center">
+              <img src="{% static 'img/profile-example.jpeg' %}" alt="">
+              by {{ article.user }}</a>
+            <div class="likes d-flex align-items-center">
               <i class="fa-solid fa-heart"></i>
               <span>likes</span>
             </div>
           </div>
         </div>
-      {% endfor %}
-    </div>
+      </div>
+    {% endfor %}
   </div>
 </article>
 {% endblock content %}

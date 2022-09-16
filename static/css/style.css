@@ -59,6 +59,16 @@ body {
 * {
   --main-color: #21C997;
 	--main-grey: #9CA3A9;
-	--main-black: #F8F9FA;
+	--main-black: #212529;
+	--border4: #F1F3F5;
 	--background-color: #F8F9FA;
+}
+
+input, textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	border: none;
 }
